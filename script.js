@@ -29,13 +29,13 @@ function handleCellClick(event) {
         event.target.textContent = currentPlayer;
 
         if (checkWinner()) {
-            message.textContent = `Player ${currentPlayer} wins!`;
+            message.textContent = `Игрок ${currentPlayer} победил!`;
             gameWon = true;
         } else if (boardFull()) {
-            message.textContent = "It's a draw!";
+            message.textContent = "Ничья!";
         } else {
             currentPlayer = currentPlayer === 'X' ? "O" : "X";
-            message.textContent = `Player ${currentPlayer}'s turn`
+            message.textContent = `Игрок ${currentPlayer} ходит`
         }
     }
 }
@@ -69,7 +69,7 @@ function resetGame() {
     board = ["", "", "", "", "", "", "", "", ""];
     currentPlayer = "X";
     gameWon = false;
-    message.textContent = `Player ${currentPlayer}'s turn`;
+    message.textContent = `Игрок ${currentPlayer} ходит`;
     createBoard();
 }
 
@@ -78,4 +78,4 @@ resetButton.addEventListener("click", resetGame);
 
 //Создание игрового поля при загрузке Страницы
 createBoard();
-message.textContent = `Player ${currentPlayer}'s turn`;
+message.textContent = `Игрок ${currentPlayer} ходит`;
